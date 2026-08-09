@@ -21,7 +21,8 @@ from collections import deque
 from dataclasses import dataclass, field
 from typing import Any
 
-from mcp.server.fastmcp import FastMCP, Image
+from fastmcp import FastMCP
+from fastmcp.utilities.types import Image
 
 
 def _rendezvous_path() -> str:
