@@ -122,7 +122,7 @@ export VCPKG_ROOT="$VCPKG_DIR"
 "$VCPKG_DIR/vcpkg" install libvpx libyuv opus aom
 
 bold "==> cargo build --release --bin rustdesk-headless"
-( cd "$TARGET" && VCPKG_ROOT="$VCPKG_DIR" cargo build --release --bin rustdesk-headless )
+( cd "$TARGET" && VCPKG_ROOT="$VCPKG_DIR" CXXFLAGS="-include cstdint" cargo build --release --bin rustdesk-headless )
 
 bin="$TARGET/target/release/rustdesk-headless"
 bold "==> Done. Binary: $bin"
